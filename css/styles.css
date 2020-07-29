@@ -133,12 +133,12 @@ main{
             background-color: white;
             background-image: url(../images/fondo-moda.png);
             background-repeat: no-repeat;
-            background-size: 60%;
+            background-size: 100%;
             background-position: right;
             grid-area: moda;
         }
             .moda .parrafo-container{
-                background: rgba(255,255,255, .35);
+                background: rgba(255,255,255, .45);
                 height: 100%;
                 width: 50%;
                 padding: 7em 4em;
@@ -154,7 +154,7 @@ main{
             grid-area: gastronomia;
         }
         .gastronomia .parrafo-container{
-            background: rgba(255,255,255, .35);
+            background: rgba(255,255,255, .45);
             height: 100%;
             width: 50%;
             padding: 7em 4em;
@@ -170,7 +170,7 @@ main{
             grid-area: video;
         }
             .video .parrafo-container{
-                background: rgba(255,255,255, .35);
+                background: rgba(255,255,255, .45);
                 height: 100%;
                 width: 50%;
                 padding: 7em 4em;
@@ -228,3 +228,28 @@ footer{
                         padding-right: 2.5em;
                     }
 /* --------------------fin del footer */
+
+@media screen and (max-width:768px){
+    .moda .parrafo-container {
+        padding: 6em 3em;
+    }
+    .gastronomia .parrafo-container {
+        padding: 5em 3em;
+    }
+    .video .parrafo-container {
+        padding: 6em 2em;
+    }
+    footer .rrss a{
+        text-decoration: none;
+        font-weight: normal;
+        margin: .5em;
+        font-size: 1.5em;
+    }
+    .left{
+        padding-left: 1.3em;
+    }
+    .right{
+        justify-self: end;
+        padding-right: 1.3em;
+    }
+}
