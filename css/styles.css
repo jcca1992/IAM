@@ -136,12 +136,12 @@ main{
         border-bottom: 5px solid black;
         border-top: 5px solid black;
     }
-            h3{
+            .title{
                 font-size: 30px;
                 color: #463123;
                 font-family: 'Times New Roman', Times, serif;
             }
-            p{
+            .parrafo{
                 color:#463123;
                 font-family: 'Times New Roman', Times, serif;
                 font-size: 20px;
@@ -264,93 +264,91 @@ footer{
     footer .rrss a{
         font-size: 3vw;
     }
-    .left{
-        /* padding-left: 1.3em; */
+    .moda{
+        background-size: cover;
+        background-position: center;
     }
-    .right{
-        /* justify-self: end; */
-        /* padding-right: 1.3em; */
+    .gastronomia{
+        background-size: cover;
+        background-position: center;
     }
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:668){
+    .title{
+        font-size: 8vw;
+    }
+    .parrafo{
+        margin: 1em;
+        font-size: 16px;
+    }
+
+}
+@media screen and (max-width:568){
+    
+}
+@media screen and (max-width:425px){
     .burger-button{
         display: block;
-    }
-    header .menu{
-        height: 55%;
-        position: fixed;
-        background:  rgba(255,255,255, .45);
-        z-index: 3;
-        top: 0px;
-        left: -100vw;
-        width: 40vw;
-        bottom: 0px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        transition: .3s;
-    }
-    .menu.is-active{
-        left: 0px;
     }
     header{
         display: block;
         height: auto;
     }
-    header .menu-list{
-        display: initial;
-    }
-    header .menu-list li{
-        height: 50px;
-    }
-    header .menu-list li a{
-        justify-content: center;
-        height: 40px;
-        font-size: 1em;
-        text-decoration: underline;
-        margin-bottom: 45px;
-    }
-
-
-
-    header .iam-image img{
-        width: 30%;
-    }
-    h3{
-        font-size: 8vw;
-    }
-    p{
-        margin: 1em;
-        font-size: 5vw;
-    }
+        header .menu{
+            height: 40%;
+            position: fixed;
+            background:  rgba(255,255,255, .45);
+            z-index: 3;
+            top: 0px;
+            left: -100vw;
+            width: 40vw;
+            bottom: 0px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: .3s;
+        }
+        .menu.is-active{
+            left: 0px;
+        }
+            header .menu-list{
+                display: initial;
+            }
+                header .menu-list li{
+                    height: 50px;
+                }
+                    header .menu-list li a{
+                        justify-content: center;
+                        height: 40px;
+                        font-size: 1em;
+                        text-decoration: underline;
+                        margin-bottom: 45px;
+                    }
+        header .iam-image img{
+            width: 30%;
+        }
     .moda{
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        background-size:cover;
-        background-position: center;
     }
-    .moda .parrafo-container{
-        align-items: center;
-        justify-content: center;
-        padding: 0 2vw;
-        border-radius: 10%;
-        height: 50%;
-        width: 80vw;
+        .moda .parrafo-container{
+            align-items: center;
+            justify-content: center;
+            padding: 0 5vw;
+            border-radius: 10%;
+            height: 80vw;
+            width: 80vw;
         }
-        .gastronomia{
-            background-size:cover;
-            background-position: center;
+        .gastronomia .parrafo-container{
+            height: 100%;
+            width: fit-content;
+            padding: 0 5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: static;
         }
-    .gastronomia .parrafo-container{
-        height: 100%;
-        width: fit-content;
-        padding: 0 5vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: static;
-    }
     .video{
         display: flex;
         align-items: flex-end;
@@ -360,25 +358,25 @@ footer{
     }
         .video .parrafo-container{
             border-radius: 10%;
-            height: 50%;
+            height: 85vw;
             width: 80vw;
-            padding: 0 2vw;
+            padding: 0 5vw;
             justify-content: center;
             align-items: center;
             }
             
-            footer .menu-list{
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(3,1fr);
-            }
-footer .menu-list li{
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-footer .rrss{
-            padding:0;
+    footer .menu-list{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+    }
+        footer .menu-list li{
+            display: flex;
+            justify-content: center;
+            padding: 0;
         }
+    footer .rrss{
+        padding:0;
+    }
         footer .rrss a{
             margin: 3vw;
             font-size: 5vw;
@@ -387,4 +385,36 @@ footer .rrss{
             justify-self: center;
         }
 
+}
+@media screen and (max-width:375px){
+    header .menu {
+        height: 45vw;
     }
+    .title{
+        font-size: 20px;
+    }
+    .parrafo{
+        font-size: 15px;
+    }
+    .moda .parrafo-container{
+        height: 66vw;
+    }
+    .video .parrafo-container{
+        height: 75vw;
+        }
+}
+@media screen and (max-width:320px){
+    header .menu {
+        height: 50vw;
+    }
+    .moda .parrafo-container{
+        height: 70vw;
+        padding: 0 5vw;
+    }
+    .video .parrafo-container{
+        height: 80vw;
+        padding: 0 5vw;
+        }
+}
+
+
