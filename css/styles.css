@@ -1,15 +1,15 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
 }
 @font-face {
     font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?5yoy4k');
-    src:  url('../fonts/icomoon.eot?5yoy4k#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?5yoy4k') format('truetype'),
-      url('../fonts/icomoon.woff?5yoy4k') format('woff'),
-      url('../fonts/icomoon.svg?5yoy4k#icomoon') format('svg');
+    src:  url('../fonts/icomoon.eot?sy59v8');
+    src:  url('../fonts/icomoon.eot?sy59v8#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?sy59v8') format('truetype'),
+      url('../fonts/icomoon.woff?sy59v8') format('woff'),
+      url('../fonts/icomoon.svg?sy59v8#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -30,6 +30,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .icon-menu:before {
+    content: "\e9bd";
+  }
   .icon-facebook2:before {
     content: "\ea91";
   }
@@ -41,14 +44,13 @@
   }
 /* Variables */
 :root{
-    --brown:#543B2B;
+    --brown:#543b2b;
 }
 
 /* Fin de variable */
 
 body{
     background: black;
-    /* padding: 10px; */
     height: 100%;
     font-size: 17px;
     font-family: 'Segoe UI', 'roboto', arial, sans-serif;
@@ -60,55 +62,71 @@ a:hover{
     text-decoration: underline;
     font-weight: bold;
 }
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: var(--brown);
+}
 
 /* ---------------------Inicio header */
 header{
-    padding: 3em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0em;
     
 }
-header .iam-image{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 1em;
-}
-header .iam-image img{
-    width: 15%;
-}
+    header .iam-image{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+        header .iam-image img{
+            width: 15%;
+        }
 /* -----------------inicio del navbar */
-header .menu{
-    height: 2em;
-    border-bottom: 1px solid var(--brown);
-    border-radius: 20px;
-}
-header.menu-container{
-    display: flex;
-    align-items: center;
-    height: inherit;
-}
-header .menu-list{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-header .menu-list li{
-    list-style: none;
-}
-header .menu-list li a{
-    color: var(--brown);
-}
+    header .menu{
+        width: 90%;
+        height: 2em;
+        border-bottom: 1px solid var(--brown);
+        border-radius: 20px;
+    }
+        header.menu-container{
+            display: flex;
+            align-items: center;
+            height: inherit;
+        }
+            header .menu-list{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+                header .menu-list li{
+                    list-style: none;
+                }
+                    header .menu-list li a{
+                        color: var(--brown);
+                    }
 /* --------------------fin del navbar */
 /* --------------------fin del header */
 
 /* -----------------inicio del main */
 main{
-    /* background: white; */
-    /* background-image: url(../images/fondo-gastro.png); */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* background-size: contain; */
     display: grid;
-    /* grid-gap: 1.5em 0; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: "moda moda" "gastronomia gastronomia" "video video";
@@ -133,32 +151,38 @@ main{
             background-color: white;
             background-image: url(../images/fondo-moda.png);
             background-repeat: no-repeat;
-            background-size: 100%;
+            background-size: 100vw;
             background-position: right;
             grid-area: moda;
         }
             .moda .parrafo-container{
                 background: rgba(255,255,255, .45);
                 height: 100%;
-                width: 50%;
-                padding: 7em 4em;
-                display: inline-block;
+                width: 40vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0 5vw;
             }
             .gastronomia{
                 background: white;
                 background-image: url(../images/fondo-gastro.png);
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size:contain;
-            background-position: left;
-            grid-area: gastronomia;
-        }
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size:contain;
+                background-position: left;
+                grid-area: gastronomia;
+            }
         .gastronomia .parrafo-container{
             background: rgba(255,255,255, .45);
             height: 100%;
-            width: 50%;
-            padding: 7em 4em;
-            display: inline-block;
+            width: 40%;
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: relative;
             left: 50%;
         }
@@ -172,21 +196,28 @@ main{
             .video .parrafo-container{
                 background: rgba(255,255,255, .45);
                 height: 100%;
-                width: 50%;
-                padding: 7em 4em;
-                display: inline-block;
+                width: 40vw;
+                padding: 0 5vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 }
         /* --------------------fin del main */
         
         
 /* --------------------Inicio footer */
 footer{
-    padding: 1em 3em;
+    padding: 1em 0em;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* position: absolute; */
     /* bottom: 0; */
 }
     footer .menu{
+        width: 90%;
         height: 2em;
         border-top: 1px solid var(--brown);
         border-radius: 20px;
@@ -217,39 +248,142 @@ footer{
                     footer .rrss a{
                         text-decoration: none;
                         font-weight: normal;
-                        margin: 1em;
-                        font-size: 1.5em;
+                        margin: 2vw;
+                        font-size: 2.5vw;
                     }
                     .left{
-                        padding-left: 2.5em;
+                        padding-left: 2.5vw;
                     }
                     .right{
                         justify-self: end;
-                        padding-right: 2.5em;
+                        padding-right: 2.5vw;
                     }
 /* --------------------fin del footer */
 
 @media screen and (max-width:768px){
-    .moda .parrafo-container {
-        padding: 6em 3em;
-    }
-    .gastronomia .parrafo-container {
-        padding: 5em 3em;
-    }
-    .video .parrafo-container {
-        padding: 6em 2em;
-    }
     footer .rrss a{
-        text-decoration: none;
-        font-weight: normal;
-        margin: .5em;
-        font-size: 1.5em;
+        font-size: 3vw;
     }
     .left{
-        padding-left: 1.3em;
+        /* padding-left: 1.3em; */
     }
     .right{
-        justify-self: end;
-        padding-right: 1.3em;
+        /* justify-self: end; */
+        /* padding-right: 1.3em; */
     }
 }
+@media screen and (max-width:320px){
+    .burger-button{
+        display: block;
+    }
+    header .menu{
+        height: 55%;
+        position: fixed;
+        background:  rgba(255,255,255, .45);
+        z-index: 3;
+        top: 0px;
+        left: -100vw;
+        width: 40vw;
+        bottom: 0px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        transition: .3s;
+    }
+    .menu.is-active{
+        left: 0px;
+    }
+    header{
+        display: block;
+        height: auto;
+    }
+    header .menu-list{
+        display: initial;
+    }
+    header .menu-list li{
+        height: 50px;
+    }
+    header .menu-list li a{
+        justify-content: center;
+        height: 40px;
+        font-size: 1em;
+        text-decoration: underline;
+        margin-bottom: 45px;
+    }
+
+
+
+    header .iam-image img{
+        width: 30%;
+    }
+    h3{
+        font-size: 8vw;
+    }
+    p{
+        margin: 1em;
+        font-size: 5vw;
+    }
+    .moda{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-size:cover;
+        background-position: center;
+    }
+    .moda .parrafo-container{
+        align-items: center;
+        justify-content: center;
+        padding: 0 2vw;
+        border-radius: 10%;
+        height: 50%;
+        width: 80vw;
+        }
+        .gastronomia{
+            background-size:cover;
+            background-position: center;
+        }
+    .gastronomia .parrafo-container{
+        height: 100%;
+        width: fit-content;
+        padding: 0 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: static;
+    }
+    .video{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-size:cover;
+        background-position: center;
+    }
+        .video .parrafo-container{
+            border-radius: 10%;
+            height: 50%;
+            width: 80vw;
+            padding: 0 2vw;
+            justify-content: center;
+            align-items: center;
+            }
+}
+
+footer .menu-list{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+}
+    footer .menu-list li{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+        footer .rrss{
+            padding:0;
+        }
+        footer .rrss a{
+            margin: 3vw;
+            font-size: 5vw;
+        }
+        .right{
+            justify-self: center;
+        }
