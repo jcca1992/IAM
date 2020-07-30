@@ -272,7 +272,7 @@ footer{
         /* padding-right: 1.3em; */
     }
 }
-@media screen and (max-width:400px){
+@media screen and (max-width:500px){
     .burger-button{
         display: block;
     }
