@@ -272,7 +272,7 @@ footer{
         /* padding-right: 1.3em; */
     }
 }
-@media screen and (max-width:320px){
+@media screen and (max-width:400px){
     .burger-button{
         display: block;
     }
@@ -366,18 +366,17 @@ footer{
             justify-content: center;
             align-items: center;
             }
+            
+            footer .menu-list{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3,1fr);
+            }
+footer .menu-list li{
+    display: flex;
+    justify-content: center;
+    padding: 0;
 }
-
-footer .menu-list{
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,1fr);
-}
-    footer .menu-list li{
-        display: flex;
-        justify-content: center;
-        padding: 0;
-    }
-        footer .rrss{
+footer .rrss{
             padding:0;
         }
         footer .rrss a{
@@ -387,3 +386,5 @@ footer .menu-list{
         .right{
             justify-self: center;
         }
+
+    }
